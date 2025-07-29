@@ -31,8 +31,10 @@ body {
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  display: inline-block;
 }
 
 .section {
@@ -68,7 +70,8 @@ body {
 
 .navbar a.active {
   color: yellow !important;
-  background: black;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  /* background: yellow !important; */
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.2s ease;
 }
