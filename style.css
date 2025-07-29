@@ -16,6 +16,7 @@ body {
     color: white;
     padding: 1rem;
     z-index: 100;
+    transition: background 0.3.s ease;
 }
 
 .navbar ul {
@@ -54,4 +55,9 @@ body {
 
 .contact {
     background:  #bbb;
+}
+
+.navbar.sticky {
+    background: #222;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
