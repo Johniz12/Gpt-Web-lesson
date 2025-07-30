@@ -37,7 +37,6 @@ const closeModal = document.getElementById('closeModal');
 
 openModal.addEventListener('click', () =>{
     modal.classList.add('show')
-    console.log('modal open')
 })
 
 closeModal.addEventListener('click', () =>{
