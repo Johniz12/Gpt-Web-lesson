@@ -48,3 +48,36 @@ modal.addEventListener('click', (e) =>{
         modal.classList.remove('show');
     }
 })
+
+const projects = [
+    {
+        title: "Interactive Landing Page",
+        description: "A portfolio landing page built with HTML, CSS, and JS.",
+        link: "#"
+    },
+    {
+        title: "Modal Contact Form",
+        description: "A reusable modal component with form validation.",
+        link: "#"
+    },
+    {
+        title: "Click Counter App",
+        description: "A simple Windows Forms app (C#) with data persistence.",
+        link: "#"
+    }
+];
+
+const projectList = document.getElementById('project-list');
+
+projects.forEach(project => {
+    const card = document.createdElement('div');
+    card.classList.add('project-card');
+
+    card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a hrer = "${project.link}" target = "_blank">View Project</a>
+    `;
+
+    projectList.appendChild(card);
+});

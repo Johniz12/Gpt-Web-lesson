@@ -121,3 +121,33 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    background: #2c2c2c;
+}
+
+.project-card h3 {
+    margin: 0.5rem 0;
+}
+
+.project-card a {
+    color: #66ccff;
+    text-decoration: none;
+}
