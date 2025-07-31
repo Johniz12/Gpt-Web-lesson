@@ -151,3 +151,24 @@ body {
     color: #66ccff;
     text-decoration: none;
 }
+
+/* Filter Buttons */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+    background: #666;
+}

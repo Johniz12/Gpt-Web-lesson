@@ -53,31 +53,54 @@ const projects = [
     {
         title: "Interactive Landing Page",
         description: "A portfolio landing page built with HTML, CSS, and JS.",
-        link: "#"
+        link: "#",
+        category: "web"
     },
     {
         title: "Modal Contact Form",
         description: "A reusable modal component with form validation.",
-        link: "#"
+        link: "#",
+        category: "web"
     },
     {
         title: "Click Counter App",
         description: "A simple Windows Forms app (C#) with data persistence.",
-        link: "#"
+        link: "#",
+        category: "app"
     }
 ];
 
 const projectList = document.getElementById('project-list');
+const filterButtons = document.querySelectorAll('.filter-buttons button');
 
-projects.forEach(project => {
-    const card = document.createdElement('div');
-    card.classList.add('project-card');
+function renderProjects(filter) {
+    projectList.innerHTML = '';// Clear previous cards
 
-    card.innerHTML = `
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <a hrer = "${project.link}" target = "_blank">View Project</a>
-    `;
+    const filtered = filter ==='all'
+        ? projects
+        : projects.filter(p => p.category === filter);
 
-    projectList.appendChild(card);
+    filtered.forEach(project => {
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+
+        card.innerHTML = `
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <a hrer = "${project.link}" target = "_blank">View Project</a>
+        `;
+
+        projectList.appendChild(card);
+    });
+}
+
+// Initial render (show all)
+renderProjects('all');
+
+// Add event listener to buttons
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        renderProjects(filter);
+    });
 });
