@@ -172,3 +172,10 @@ body {
 .filter-buttons button:hover {
     background: #666;
 }
+
+.error {
+    color: #ff6666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}

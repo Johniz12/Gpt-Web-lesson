@@ -49,6 +49,31 @@ modal.addEventListener('click', (e) =>{
     }
 })
 
+const contactForm = document.getElementById('contact-form');
+const formError = document.getElementById('form-error');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault(); //Stop form from refreshing the page
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name === '' || email === '' || message === '') {
+        formError.textContent = `⚠️ Please fill in all fields.`;
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formError.textContent = `⚠️ Please enter a valid email address`;
+        return;
+    }
+
+    formError.textContent = ''; // Clear errors if all is good
+    alert('✅ Message sent successfully!');
+    contactForm.reset();
+});
+
 const projects = [
     {
         title: "Interactive Landing Page",
