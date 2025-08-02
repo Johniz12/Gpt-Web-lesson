@@ -129,3 +129,36 @@ filterButtons.forEach(btn => {
         renderProjects(filter);
     });
 });
+
+window.addEventListener('scroll', () => {
+  let currentSection = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  setActiveLink(currentSection);
+});
+
+// Scroll to top when clicked
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+
+function setActiveLink(currentSection) {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
+// setActiveLink(currentSection);

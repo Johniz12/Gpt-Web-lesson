@@ -100,6 +100,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    z-index: 1000; /* ⬅️ Make sure this is high */
 }
 
 .modal.show {
@@ -178,4 +179,28 @@ body {
     font-size: 0.9rem;
     margin-top: 0.5rem;
     text-align: center;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: opcity 0.3s;
+    z-index: 500; /*Below modal*/
+}
+
+.scroll-top.show {
+    display: block;
+    opacity: 0.8;
+}
+
+.scroll-top:hover {
+    opacity: 1;
 }
