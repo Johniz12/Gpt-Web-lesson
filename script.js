@@ -1,3 +1,4 @@
+// ===== Sticky Navbar =====
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
@@ -8,8 +9,18 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// ===== Active Link Highlight =====
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.navbar a');
+
+function setActiveLink(currentSection) {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
 
 window.addEventListener('scroll', () => {
     let current = '';
@@ -31,24 +42,27 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// ===== Modal Contact Form =====
 const modal = document.getElementById('modal');
 const openModal = document.getElementById('openModal');
 const closeModal = document.getElementById('closeModal');
 
-openModal.addEventListener('click', () =>{
-    modal.classList.add('show')
-})
+function openModalBox() {
+    modal.classList.add('show');
+}
 
-closeModal.addEventListener('click', () =>{
-    modal.classList.remove('show');
-});
+function closeModalBox() {
+    modal.classList.remove('show')
+}
 
+openModal.addEventListener('click', openModalBox)
+closeModal.addEventListener('click', closeModalBox)
 modal.addEventListener('click', (e) =>{
-    if (e.target === modal) {
-        modal.classList.remove('show');
-    }
-})
+    if (e.target === modal) closeModalBox()
+    });
 
+
+// ===== Contact Form Validation =====
 const contactForm = document.getElementById('contact-form');
 const formError = document.getElementById('form-error');
 
@@ -74,6 +88,7 @@ contactForm.addEventListener('submit', (e) => {
     contactForm.reset();
 });
 
+// ===== Dynamic Project Gallery =====
 const projects = [
     {
         title: "Interactive Landing Page",
@@ -130,35 +145,20 @@ filterButtons.forEach(btn => {
     });
 });
 
+// ===== Scroll-to-Top Button =====
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
 window.addEventListener('scroll', () => {
-  let currentSection = '';
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
-      currentSection = section.getAttribute('id');
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
     }
-  });
-
-  setActiveLink(currentSection);
 });
 
-// Scroll to top when clicked
 scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 });
-
-
-
-function setActiveLink(currentSection) {
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-            link.classList.add('active');
-        }
-    });
-}
-// setActiveLink(currentSection);
