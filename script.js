@@ -156,9 +156,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-scrollTopBtn.addEventListener('click', () => {
+function scrollTopBtnTop() {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
-    });
-});
+    })
+}
+scrollTopBtn.addEventListener('click', scrollTopBtnTop);
+

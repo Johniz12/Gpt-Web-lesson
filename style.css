@@ -182,18 +182,19 @@ body {
 }
 
 .scroll-top {
+    font-size: 18px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 60px;
+    right: 30px;
     background: #444;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    display: none;
+    display: none; /*hidden by default*/
     transition: opcity 0.3s;
-    z-index: 500; /*Below modal*/
+    z-index: 999; /*Below modal*/
 }
 
 .scroll-top.show {
