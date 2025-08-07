@@ -125,32 +125,49 @@ body {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .project-card {
-    background: #1e1e1e;
-    padding: 1rem;
-    border-radius: 8px;
-    color: white;
-    text-align: center;
-    transition: transform 0.3s ease;
+    background: hsl(0 0% 100%/0.5);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(0 0% 100%/0.1);
+    transition: transform o.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px hsl(0 0% 0%/0.2);
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    background: #2c2c2c;
+    transform: translate(-8px);
+    box-shadow: 0 20px 30px hsl(0 0% 0%/0.25); 
 }
 
 .project-card h3 {
     margin: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: hsl(210, 100%, 70%);
 }
 
 .project-card a {
-    color: #66ccff;
-    text-decoration: none;
+   display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: hsl(210, 100%, 60%);
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.project-card a:hover {
+  background: hsl(210, 100%, 50%);
 }
 
 /* Filter Buttons */
