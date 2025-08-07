@@ -1,4 +1,4 @@
-# GPT Web Lesson – Portfolio Project
+# GPT Web Lesson – Portfolio Project (Ongoing)
 
 A personal portfolio website built step-by-step as part of my web development learning journey.  
 This project showcases my progress with HTML, CSS, and JavaScript while building real-world, interactive features.
